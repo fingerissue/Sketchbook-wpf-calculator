@@ -1,4 +1,4 @@
-﻿# WpfCalculator
+﻿# Calculator-wpf
 A simple calculator application built with WPF and C# to learn the fundamentals of .NET desktop development.
 
 ## ✨ Features
