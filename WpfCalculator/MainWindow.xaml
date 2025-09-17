@@ -45,7 +45,7 @@
 		<Button x:Name="Button3" Grid.Row="4" Grid.Column="2" Content="3" FontSize="24" Margin="5" Click="NumberButton_Click"/>
 		<Button x:Name="ButtonAdd" Grid.Row="4" Grid.Column="3" Content="+" FontSize="24" Margin="5" Click="OperatorButton_Click"/>
 
-		<Button x:Name="Button0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="0" FontSize="24" Margin="5"/>
+		<Button x:Name="Button0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="0" FontSize="24" Margin="5" Click="NumberButton_Click"/>
 		<Button Grid.Row="5" Grid.Column="2" Content="." FontSize="24" Margin="5"/>
 		<Button x:Name="ButtonEquals" Grid.Row="5" Grid.Column="3" Content="=" FontSize="24" Margin="5" Click="EqualsButton_Click"/>
 	</Grid>

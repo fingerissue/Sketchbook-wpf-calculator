@@ -11,14 +11,49 @@ using System.Windows.Shapes;
 
 namespace WpfCalculator
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        private double operand1 = 0;
+        private string op = "";
+        private bool isNewEntry = false;
+
         public MainWindow()
         {
             InitializeComponent();
+        
+        }
+        private void NumberButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = sender as Button;
+            string number = clickedButton.Content.ToString();
+
+            if (isNewEntry || ResultTextBlock.Text == "0")
+            {
+                ResultTextBlock.Text = number;
+                isNewEntry = false;
+            }
+            else
+            {
+                ResultTextBlock.Text += number;
+            }
+        }
+
+        private void OperatorButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = sender as Button;
+
+            operand1 = double.Parse(ResultTextBlock.Text);
+            op = clickedButton.Content.ToString();
+            isNewEntry = true;
+        }
+
+        private void EqualsButton_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            ResultTextBlock.Text = "0";
         }
     }
 }
