@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -51,14 +52,41 @@ namespace WpfCalculator
 
         private void OperatorButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!string.IsNullOrEmpty(op) && !isNewEntry)
+            {
+                PerformCalculation();
+            }
+            else
+            {
+                operand1 = double.Parse(ResultTextBlock.Text);
+            }
+            
             Button clickedButton = sender as Button;
-
-            operand1 = double.Parse(ResultTextBlock.Text);
             op = clickedButton.Content.ToString();
+            EquationTextBlock.Text = $"{operand1} {op}";
             isNewEntry = true;
         }
 
         private void EqualsButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(op))
+            {
+                PerformCalculation();
+                EquationTextBlock.Text = "";
+                op = "";
+            }
+        }
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            ResultTextBlock.Text = "0";
+            EquationTextBlock.Text = "";
+            operand1 = 0;
+            op = "";
+            isNewEntry = false;
+        }
+
+        private void PerformCalculation()
         {
             double operand2 = double.Parse(ResultTextBlock.Text);
             double result = 0;
@@ -77,7 +105,7 @@ namespace WpfCalculator
                 case "/":
                     if (operand2 == 0)
                     {
-                        MessageBox.Show("0으로 나눌 수 없습니다", "오류", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("0으로 나눌 수 없습니다.", "오류", MessageBoxButton.OK, MessageBoxImage.Error);
                         return;
                     }
                     result = operand1 / operand2;
@@ -85,12 +113,7 @@ namespace WpfCalculator
             }
 
             ResultTextBlock.Text = result.ToString();
-            isNewEntry = true;
-        }
-
-        private void ClearButton_Click(object sender, RoutedEventArgs e)
-        {
-            ResultTextBlock.Text = "0";
+            operand1 = result;
         }
     }
 }
