@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCalculator"
         mc:Ignorable="d"
-        Title="Calculator" Height="500" Width="300">
+        Title="Calculator" Height="500" Width="300"
+		KeyDown="Window_KeyDown">
 	<Grid Margin="10">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
@@ -49,7 +50,7 @@
 		<Button x:Name="ButtonAdd" Grid.Row="5" Grid.Column="3" Content="+" FontSize="24" Margin="5" Click="OperatorButton_Click"/>
 
 		<Button x:Name="Button0" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Content="0" FontSize="24" Margin="5" Click="NumberButton_Click"/>
-		<Button Grid.Row="6" Grid.Column="2" Content="." FontSize="24" Margin="5" Click="NumberButton_Click"/>
+		<Button x:Name="ButtonDemical" Grid.Row="6" Grid.Column="2" Content="." FontSize="24" Margin="5" Click="NumberButton_Click"/>
 		<Button x:Name="ButtonEquals" Grid.Row="6" Grid.Column="3" Content="=" FontSize="24" Margin="5" Click="EqualsButton_Click"/>
 	</Grid>
 </Window>
