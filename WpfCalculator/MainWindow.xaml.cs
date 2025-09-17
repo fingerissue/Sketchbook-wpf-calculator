@@ -115,5 +115,16 @@ namespace WpfCalculator
             ResultTextBlock.Text = result.ToString();
             operand1 = result;
         }
+
+        private void PlusMinusButton_Click(object sender, RoutedEventArgs e)
+        {
+            double currentValue = double.Parse(ResultTextBlock.Text);
+
+            if (currentValue != 0)
+            {
+                currentValue *= -1;
+                ResultTextBlock.Text = currentValue.ToString();
+            }
+        }
     }
 }

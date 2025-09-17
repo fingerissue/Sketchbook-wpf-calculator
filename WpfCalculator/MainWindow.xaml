@@ -29,7 +29,7 @@
 				   Text="0" FontSize="48" TextAlignment="Right" VerticalAlignment="Bottom" Margin="5"/>
 
 		<Button x:Name="ButtonClear" Grid.Row="2" Grid.Column="0" Content="C" FontSize="24" Margin="5" Click="ClearButton_Click"/>
-		<Button Grid.Row="2" Grid.Column="1" Content="+/-" FontSize="24" Margin="5"/>
+		<Button Grid.Row="2" Grid.Column="1" Content="+/-" FontSize="24" Margin="5" Click="PlusMinusButton_Click"/>
 		<Button Grid.Row="2" Grid.Column="2" Content="%" FontSize="24" Margin="5"/>
 		<Button x:Name="ButtonDivide" Grid.Row="2" Grid.Column="3" Content="/" FontSize="24" Margin="5" Click="OperatorButton_Click"/>
 
