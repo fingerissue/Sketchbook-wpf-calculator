@@ -26,14 +26,25 @@ namespace WpfCalculator
         {
             Button clickedButton = sender as Button;
             string number = clickedButton.Content.ToString();
-
+            
             if (isNewEntry || ResultTextBlock.Text == "0")
             {
-                ResultTextBlock.Text = number;
+                if (number == ".")
+                {
+                    ResultTextBlock.Text = "0.";
+                }
+                else
+                {
+                    ResultTextBlock.Text = number;
+                }
                 isNewEntry = false;
             }
             else
             {
+                if (number == "." && ResultTextBlock.Text.Contains("."))
+                {
+                    return;
+                }
                 ResultTextBlock.Text += number;
             }
         }
