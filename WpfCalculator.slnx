@@ -1,3 +1,7 @@
 <Solution>
+  <Folder Name="/솔루션 항목/">
+    <File Path="journey/0. Hello.md" />
+    <File Path="journey/1. 추가예정.md" />
+  </Folder>
   <Project Path="WpfCalculator/WpfCalculator.csproj" />
 </Solution>
